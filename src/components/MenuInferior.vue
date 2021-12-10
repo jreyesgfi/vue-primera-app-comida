@@ -1,9 +1,18 @@
 <template>
     <div class= "navbar-container">
         <div class= "navbar-content">
-            <div class= "icons">
-                <i class='bx bx-code-alt'></i>
-            </div>
+            <router-link to ="/">
+                <i class='bx bx-code-alt bx-sm'></i>
+            </router-link>
+            <router-link to ="/codigo">
+                <i class='bx bx-code-alt bx-sm'></i>
+            </router-link>
+            <router-link to ="/aboutme">
+                <i class='bx bx-code-alt bx-sm'></i>
+            </router-link>
+            <router-link to ="/proyects">
+                <i class='bx bx-code-alt bx-sm'></i>
+            </router-link>
         </div>
     </div>
 </template>
@@ -19,7 +28,21 @@ export default {
 <style>
 .navbar-container{
     width: 100%;
-    background-color: red;
+    margin:0px;
+    position: fixed;
+    bottom: 0;
+}
+.navbar-content{
+    padding:10px min(15vw,40px);
+    display: flex;
+    box-sizing: border-box;
+    max-width: 500px;
+    justify-content: space-between;
+}
+
+a {
+    margin:3px;
+    
 }
 
 </style>
