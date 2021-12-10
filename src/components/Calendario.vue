@@ -1,5 +1,8 @@
 <template>
     <div class= "calendario">
+        <h1 class= "nombre-mes">
+            {{mes}}
+        </h1>
         <div class = "calendario-container" v-if="pantallaMes">
             <div class="dia" v-for="(dia, index) in totalDias" :key=index>
                 <strong>{{dia}}</strong>
@@ -11,7 +14,11 @@
 </template>
 
 <script>
-    var mes = 'marzo';
+    const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre']
+    var mesNumerico = new Date(Date.now()).getMonth();
+    var mes = meses[mesNumerico]
+    console.log(mes)
+    
     const meses31 = ['enero', 'marzo', 'mayo', 'julio', 'agosto','octubre','diciembre'];
     var totalDias = 30;
     if (meses31.includes(mes)){
@@ -26,7 +33,8 @@
         data() {
             return{
                 pantallaMes: true,
-                totalDias: totalDias
+                totalDias: totalDias,
+                mes: mes
             }           
         }
     }
@@ -44,6 +52,9 @@
     min-width: 300px;
     max-width: 600px;
     position:relative;
+}
+.nombre-mes{
+    margin: 15px auto;
 }
 .calendario-container{
     display:flex;

@@ -2,9 +2,6 @@
   <div class='menu-inferior'>
     <MenuInferior>
     </MenuInferior>
-    <p class='cuerpo-aplicacion'>
-      {{mensaje}}
-    </p>
     <Calendario>
     </Calendario>
   </div>
@@ -38,8 +35,5 @@ import MenuInferior from './components/MenuInferior.vue';
 *{
   margin: 0px;
   padding: 0px;
-}
-.cuerpo-aplicacion{
-  margin-top:3vh;
 }
 </style>
