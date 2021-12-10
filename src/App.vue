@@ -17,7 +17,10 @@ import MenuInferior from './components/MenuInferior.vue';
       Calendario
     },
     data(){
-      return {mensaje: "mensaje de prueba"}
+      return {
+        mensaje: "mensaje de prueba",
+        pantallaActual: 'pantallaMes'
+      }
     }
   }
 

@@ -1,9 +1,9 @@
 <template>
-    <div class= "calendario">
+    <div class= "calendario" v-if='pantallaMes'>
         <h1 class= "nombre-mes">
             {{mes}}
         </h1>
-        <div class = "calendario-container" v-if="pantallaMes">
+        <div class = "calendario-container" >
             <div class="dia" v-for="(dia, index) in totalDias" :key=index>
                 <strong>{{dia}}</strong>
                 <br>
@@ -14,6 +14,11 @@
 </template>
 
 <script>
+    // Aquí deberíamos preguntarle a App.vue
+    import App from './../App.vue'
+    var pantallaMes = ()=>{
+        return (App.data().pantallaActual == 'pantallaMes');}
+
     const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre']
     var mesNumerico = new Date(Date.now()).getMonth();
     var mes = meses[mesNumerico]
@@ -32,7 +37,7 @@
         name: 'Calendario',
         data() {
             return{
-                pantallaMes: true,
+                pantallaMes: pantallaMes(),
                 totalDias: totalDias,
                 mes: mes
             }           
