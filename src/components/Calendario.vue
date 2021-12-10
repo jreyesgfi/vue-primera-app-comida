@@ -39,8 +39,8 @@
         data() {
             return{
                 pantallaCalendario: pantallaCalendario(),
-                totalDias: totalDias,
-                mes: mes
+                totalDias,
+                mes
             }           
         }
     }

@@ -10,6 +10,7 @@
 <script>
 import Calendario from './components/Calendario.vue';
 import MenuInferior from './components/MenuInferior.vue';
+var pantallaActual = 'calendario'
   export default {
     name: 'App',
     components: {
@@ -19,13 +20,20 @@ import MenuInferior from './components/MenuInferior.vue';
     data(){
       return {
         mensaje: "mensaje de prueba",
-        pantallaActual: 'calendario'
+        pantallaActual
       }
     },
     methods: {
-      cambiarPantalla: function(pantallaNueva) {
-        console.log(this.data().pantallaActual)
-        this.data().pantallaActual = pantallaNueva
+      cambiarPantalla(pantallaNueva) {
+        
+        try{
+          console.log(pantallaActual)
+          pantallaActual = pantallaNueva
+          console.log(pantallaActual)
+        }
+        catch(error){
+          console.log(error)
+        }
       }
     }
   }
