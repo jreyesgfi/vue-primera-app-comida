@@ -1,16 +1,34 @@
 <template>
     <div class= "calendario">
-        <div class = "calendario-container">
-            <div class="dia" v-for="(dia, index) in 31" :key=index>
-                {{dia}}
+        <div class = "calendario-container" v-if="pantallaMes">
+            <div class="dia" v-for="(dia, index) in totalDias" :key=index>
+                <strong>{{dia}}</strong>
+                <br>
+                Vacío
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    var mes = 'marzo';
+    const meses31 = ['enero', 'marzo', 'mayo', 'julio', 'agosto','octubre','diciembre'];
+    var totalDias = 30;
+    if (meses31.includes(mes)){
+        totalDias = 31;
+    }
+    else if (mes =='febrero'){
+        totalDias = 28;
+    }
+
     export default {
-        name: 'Calendario'
+        name: 'Calendario',
+        data() {
+            return{
+                pantallaMes: true,
+                totalDias: totalDias
+            }           
+        }
     }
 </script>
 
