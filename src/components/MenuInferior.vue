@@ -1,27 +1,33 @@
 <template>
     <div class= "navbar-container">
         <div class= "navbar-content">
-            <router-link to ="/">
+            <div class= "boton-nav">
+                <i v-on:click="cambiarPantalla('calendario')" class='bx bxs-calendar'></i>
+            </div>
+            <div class= "boton-nav">
+                <i v-on:click="cambiarPantalla('pantalla')" class='bx bx-code-alt bx-sm'></i>
+            </div>
+            <div class= "boton-nav">
                 <i class='bx bx-code-alt bx-sm'></i>
-            </router-link>
-            <router-link to ="/codigo">
+            </div>
+            <div class= "boton-nav">
                 <i class='bx bx-code-alt bx-sm'></i>
-            </router-link>
-            <router-link to ="/aboutme">
-                <i class='bx bx-code-alt bx-sm'></i>
-            </router-link>
-            <router-link to ="/proyects">
-                <i class='bx bx-code-alt bx-sm'></i>
-            </router-link>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+import App from './../App.vue'
 export default {
     // Estoy creando la parte del sccript de la clase
     // Arriba he creado lo equivalente al refresh
-    name: 'MenuInferior'
+    name: 'MenuInferior',
+    methods:{
+        cambiarPantalla : function(pantalla) {
+            App.methods.cambiarPantalla(pantalla)
+        }
+    }
 }
 </script>
 
@@ -41,8 +47,9 @@ export default {
 }
 
 a {
-    margin:3px;
-    
+    margin:3px;  
 }
+
+
 
 </style>

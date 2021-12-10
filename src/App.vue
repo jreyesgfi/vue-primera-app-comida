@@ -19,7 +19,13 @@ import MenuInferior from './components/MenuInferior.vue';
     data(){
       return {
         mensaje: "mensaje de prueba",
-        pantallaActual: 'pantallaMes'
+        pantallaActual: 'calendario'
+      }
+    },
+    methods: {
+      cambiarPantalla: function(pantallaNueva) {
+        console.log(this.data().pantallaActual)
+        this.data().pantallaActual = pantallaNueva
       }
     }
   }
