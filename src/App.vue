@@ -1,17 +1,19 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <MenuInferior>
+    </MenuInferior>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  import MenuInferior from './components/MenuInferior.vue';
+  export default {
+    name: 'App',
+    components: {
+      MenuInferior
+    }
   }
-}
+
 </script>
 
 <style>
