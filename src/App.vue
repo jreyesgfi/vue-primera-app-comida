@@ -11,6 +11,8 @@
 import { ref } from '@vue/reactivity';
 import Calendario from './components/Calendario.vue';
 import MenuInferior from './components/MenuInferior.vue';
+
+// actualizar la pantalla actual
 var pantallaActual = ref('calendario')
 const cambiarPantalla = (pantalla) =>{
   console.log

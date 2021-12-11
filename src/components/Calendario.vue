@@ -4,18 +4,21 @@
             {{mes}}
         </h1>
         <div class = "calendario-container" >
-            <div class="dia" v-for="(dia, index) in totalDias" :key=index>
-                <strong>{{dia}}</strong>
-                <br>
-                Vacío
-            </div>
+            <Dia
+                v-for="(dia, index) in listaDias"
+                :key=index
+                :numero = "dia.num"
+                :todos = "dia.todos">
+            </Dia>
         </div>
     </div>
 </template>
 
 <script>
-    // Tomamos el valor de la pantalla actual de la App.vue
-    //import App from './../App.vue'
+
+    //  Vamos a definir la clase día
+    import Dia from './elements/dia.vue'
+
 
     // Determinamos en que mes estamos
     const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre']
@@ -32,11 +35,22 @@
         totalDias = 28;
     }
 
+
+    // Creamos nuestra lista de dias
+    var listaDias = []
+    for (let num in totalDias){
+        const dia = {num:num, todos:['Hola']}
+        listaDias.push(dia)
+    }
+
     export default {
         name: 'Calendario',
+        components:{
+            Dia
+        },
         data() {
             return{
-                totalDias,
+                listaDias,
                 mes
             }           
         }
@@ -65,13 +79,6 @@
     position:relative;
     justify-content:safe;
     padding: 2px;
-}
-.dia{
-    background: greenyellow;
-    width: calc(100% / 7);
-    height: 9vh;
-    border: solid 1px black;
-    box-sizing:border-box;
 }
 
 
