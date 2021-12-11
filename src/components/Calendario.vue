@@ -3,13 +3,14 @@
         <h1 class= "nombre-mes">
             {{mes}}
         </h1>
-        <div class = "calendario-container" >
+        <div class = "calendario-container">
             <Dia
                 v-for="(dia, index) in listaDias"
                 :key=index
                 :numero="dia.num"
-                :todos="dia.todos">
-                
+                :todos="dia.todos"
+                :hueco="dia.hueco"
+                :posicion=index>
             </Dia>
         </div>
     </div>
@@ -38,15 +39,20 @@
 
 
     // Creamos nuestra lista de dias
-    var listaDias = listaDias= [{num:1,todos:['hola']},{num:2,todos:['hola','adios']}]
-    try{
-        for (let num in totalDias){
-            const dia = {num:num, todos:['Hola']}
-            listaDias.push(dia)
 
-        }
-    } catch(error){
-        console.log(error)
+    // Empezamos por los huecos iniciales (de momento serán fijos, no dependen del mes)
+    const huecosIniciales = 3;
+    var listaDias = [];
+    for (let num=1; num <= huecosIniciales; num++){
+        const dia = {num:num, todos:[],hueco:true};
+        listaDias.push(dia);
+    }
+
+    // Ahora creamos el resto de días como diccionarios que recorrera el v-for
+    for (let num=1; num <= totalDias; num++){
+
+        const dia = {num:num, todos:['Hola'],hueco:false};
+        listaDias.push(dia);
     }
 
     export default {

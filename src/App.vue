@@ -2,7 +2,7 @@
   <div class='menu-inferior'>
     <MenuInferior>
     </MenuInferior>
-    <Calendario v-if='pantallaActual == "calendario"'>
+    <Calendario v-show='pantallaActual == "calendario"'>
     </Calendario>
   </div>
 </template>
@@ -15,7 +15,6 @@ import MenuInferior from './components/MenuInferior.vue';
 // actualizar la pantalla actual
 var pantallaActual = ref('calendario')
 const cambiarPantalla = (pantalla) =>{
-  console.log
   console.log(pantallaActual.value)
   pantallaActual.value = pantalla
   console.log(pantallaActual.value)
