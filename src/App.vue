@@ -2,15 +2,22 @@
   <div class='menu-inferior'>
     <MenuInferior>
     </MenuInferior>
-    <Calendario>
+    <Calendario v-if='pantallaActual == "calendario"'>
     </Calendario>
   </div>
 </template>
 
 <script>
+import { ref } from '@vue/reactivity';
 import Calendario from './components/Calendario.vue';
 import MenuInferior from './components/MenuInferior.vue';
-var pantallaActual = 'calendario'
+var pantallaActual = ref('calendario')
+const cambiarPantalla = (pantalla) =>{
+  console.log
+  console.log(pantallaActual.value)
+  pantallaActual.value = pantalla
+  console.log(pantallaActual.value)
+}
   export default {
     name: 'App',
     components: {
@@ -20,22 +27,15 @@ var pantallaActual = 'calendario'
     data(){
       return {
         mensaje: "mensaje de prueba",
-        pantallaActual
+        pantallaActual,
+        cambiarPantalla
       }
     },
     methods: {
-      cambiarPantalla(pantallaNueva) {
-        
-        try{
-          console.log(pantallaActual)
-          pantallaActual = pantallaNueva
-          console.log(pantallaActual)
-        }
-        catch(error){
-          console.log(error)
-        }
-      }
-    }
+      comprobarSiFunciona(pantalla) {
+        return this.mensaje + pantalla;
+      },
+    },
   }
 
 </script>

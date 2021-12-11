@@ -2,16 +2,16 @@
     <div class= "navbar-container">
         <div class= "navbar-content">
             <div class= "boton-nav">
-                <i v-on:click="cambiarPantalla('calendario')" class='bx bxs-calendar'></i>
+                <i @click="cambiarPantalla('principal')" class='bx bxs-home'></i>
             </div>
             <div class= "boton-nav">
-                <i v-on:click="cambiarPantalla('pantalla')" class='bx bx-code-alt bx-sm'></i>
+                <i @click="cambiarPantalla('calendario')" class='bx bxs-calendar'></i>
             </div>
             <div class= "boton-nav">
-                <i class='bx bx-code-alt bx-sm'></i>
+                <i @click="cambiarPantalla('codigo')" class='bx bx-code-alt bx-sm'></i>
             </div>
             <div class= "boton-nav">
-                <i class='bx bx-code-alt bx-sm'></i>
+                <i @click="cambiarPantalla('comentarios')" class='bx bx-message-square-dots'></i>
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@ export default {
     name: 'MenuInferior',
     methods:{
         cambiarPantalla : function(pantalla) {
-            App.methods.cambiarPantalla(pantalla)
+            return App.data().cambiarPantalla(pantalla)
         }
     }
 }

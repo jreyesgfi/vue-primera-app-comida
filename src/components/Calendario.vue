@@ -1,5 +1,5 @@
 <template>
-    <div class= "calendario" v-if='pantallaCalendario'>
+    <div class= "calendario">
         <h1 class= "nombre-mes">
             {{mes}}
         </h1>
@@ -15,9 +15,7 @@
 
 <script>
     // Tomamos el valor de la pantalla actual de la App.vue
-    import App from './../App.vue'
-    var pantallaCalendario = ()=>{
-        return (App.data().pantallaActual == 'calendario');}
+    //import App from './../App.vue'
 
     // Determinamos en que mes estamos
     const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre']
@@ -38,7 +36,6 @@
         name: 'Calendario',
         data() {
             return{
-                pantallaCalendario: pantallaCalendario(),
                 totalDias,
                 mes
             }           
