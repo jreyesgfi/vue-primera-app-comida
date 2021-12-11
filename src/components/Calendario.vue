@@ -7,8 +7,9 @@
             <Dia
                 v-for="(dia, index) in listaDias"
                 :key=index
-                :numero = "dia.num"
-                :todos = "dia.todos">
+                :numero="dia.num"
+                :todos="dia.todos">
+                
             </Dia>
         </div>
     </div>
@@ -37,10 +38,15 @@
 
 
     // Creamos nuestra lista de dias
-    var listaDias = []
-    for (let num in totalDias){
-        const dia = {num:num, todos:['Hola']}
-        listaDias.push(dia)
+    var listaDias = listaDias= [{num:1,todos:['hola']},{num:2,todos:['hola','adios']}]
+    try{
+        for (let num in totalDias){
+            const dia = {num:num, todos:['Hola']}
+            listaDias.push(dia)
+
+        }
+    } catch(error){
+        console.log(error)
     }
 
     export default {
@@ -50,8 +56,8 @@
         },
         data() {
             return{
-                listaDias,
-                mes
+                mes,
+                listaDias
             }           
         }
     }

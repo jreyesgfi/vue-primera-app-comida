@@ -1,10 +1,10 @@
 <template>
     <div class="dia">
-        <strong>{{numero}}</strong>
+        <strong>{{num}}</strong>
         <br>
-        <p v-for="(todo,index) in todos"
+        <p v-for="(todo,index) in listaTodos"
         :key = "index">
-            todo
+            {{todo}}
         </p>
     </div>
 </template>
@@ -19,8 +19,8 @@
         },
         data(){
                 return{
-                    numero:this.numero,
-                    todos:this.todos
+                    num:this.numero,
+                    listaTodos:this.todos
                 }
         }  
     }
